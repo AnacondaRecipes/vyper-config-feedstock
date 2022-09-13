@@ -41,7 +41,7 @@ test:
     - vyper
 
 about:
-  home: http://github.com/alexferl/vyper
+  home: https://github.com/alexferl/vyper
   license: MIT
   license_family: MIT
   license_file: LICENSE
