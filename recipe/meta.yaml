@@ -16,14 +16,10 @@ build:
 
 requirements:
   host:
-    - distconfig3 >=1.0.1
     - pip
     - python
     - pytest-runner >=6.0.0
-    - pyyaml >=5.4.1
     - setuptools
-    - toml >=0.10.0
-    - watchdog >=0.10.0
     - wheel
   run:
     - distconfig3 >=1.0.1
