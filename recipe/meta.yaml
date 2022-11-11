@@ -2,17 +2,17 @@
 {% set version = "1.1.1" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://github.com/alexferl/vyper/archive/refs/tags/v{{ version }}.tar.gz"
+  url: https://github.com/alexferl/vyper/archive/refs/tags/v{{ version }}.tar.gz
   sha256: 6eab8a18987ac84e9c26395652b95f1ad6f03edbb7875a08cc53e6b4ed8ee235
 
 build:
   number: 0
   skip: True  # [py<37]
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -42,7 +42,7 @@ about:
   license_family: MIT
   license_file: LICENSE
   license_url: https://github.com/alexferl/vyper/blob/master/LICENSE
-  summary: "Python configuration with (more) fangs"
+  summary: Python configuration with (more) fangs
   doc_url: https://github.com/alexferl/vyper
   dev_url: https://github.com/alexferl/vyper
 
