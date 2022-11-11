@@ -41,8 +41,10 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  license_url: https://github.com/alexferl/vyper/blob/master/LICENSE
   summary: Python configuration with (more) fangs
+  description: |
+    Vyper is a complete configuration solution for Python applications including 12 factor apps.
+    It is designed to work within an application, and can handle all types of configuration needs and formats.
   doc_url: https://github.com/alexferl/vyper
   dev_url: https://github.com/alexferl/vyper
 
