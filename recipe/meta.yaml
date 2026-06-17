@@ -1,18 +1,18 @@
 {% set name = "vyper-config" %}
-{% set version = "1.1.1" %}
+{% set version = "1.2.1" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
   url: https://github.com/alexferl/vyper/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 6eab8a18987ac84e9c26395652b95f1ad6f03edbb7875a08cc53e6b4ed8ee235
+  sha256: 97ecbdf87a43ebf05b9e7c7fbf6e39da0852567e9c85f34f2918fd3ef70a4304
 
 build:
   number: 0
-  skip: True  # [py<37]
-  script: {{ PYTHON }} -m pip install . -vv
+  skip: True  # [py<38]
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
@@ -24,17 +24,21 @@ requirements:
   run:
     - distconfig3 >=1.0.1
     - python
-    - pyyaml >=5.4.1
+    - pyyaml >=6.0.1
     - toml >=0.10.0
-    - watchdog >=0.10.0
+    - watchdog >=3.0.0
 
 test:
-  requires:
-    - pip
-  commands:
-    - pip check
+  source_files:
+    - tests
   imports:
     - vyper
+  commands:
+    - pip check
+    - pytest -v tests
+  requires:
+    - pip
+    - pytest
 
 about:
   home: https://github.com/alexferl/vyper
